@@ -1,12 +1,25 @@
-import sqlite3
 from db import db
 
 class UserModel(db.Model):
-    __tablename__ = 'users'
 
+    __tablename__ = 'user'
+
+    # Basic attributes
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80))
-    password = db.Column(db.String(80))
+    insert_at = db.Column(db.String(128))
+    update_at = db.Column(db.String(128))
+    prenom = db.Column(db.String(128))
+    nom = db.Column(db.String(128))
+    username = db.Column(db.String(128))
+    password = db.Column(db.String(32))
+    pseudo = db.Column(db.String(128))
+    telephone = db.Column(db.String(128))
+    active = db.Column(db.Integer)
+
+    # Relations
+    level_admin_id = db.Column(db.Integer, db.ForeignKey('level_admin.id'))
+
+    user_picture = db.relationship('ProfilePictureModel', backref='user_picture')
 
     def __init__(self, username, password):
         self.username = username
