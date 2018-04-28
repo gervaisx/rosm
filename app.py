@@ -10,9 +10,9 @@ from resources.user import UserRegister
 
 # App Config
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:password@server/db'
+app.config['SQLALCHEMY_DATABASE_URI'] = credentials.secret_key['connection_string']
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.secret_key = credentials.secret_key['password']
+app.secret_key = credentials.secret_key['api_password']
 api = Api(app)
 
 

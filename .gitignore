@@ -56,7 +56,6 @@ local_settings.py
 # Flask stuff:
 instance/
 .webassets-cache
-credentials.py
 
 # Scrapy stuff:
 .scrapy
