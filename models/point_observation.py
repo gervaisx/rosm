@@ -20,4 +20,4 @@ class PointObservationModel(db.Model):
     type_milieu_id = db.Column(db.Integer, db.ForeignKey('type_milieu.id'))
     categorie_profondeur_id = db.Column(db.Integer, db.ForeignKey('categorie_profondeur.id'))
 
-    # categorie_profondeur = db.relationship('CategorieProfondeurModel', backref='observation_profondeur')
+    point_observation = db.relationship('ObservationModel', backref='point_observation')

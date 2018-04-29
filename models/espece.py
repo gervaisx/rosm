@@ -15,3 +15,4 @@ class EspeceModel(db.Model):
     genre_id = db.Column(db.Integer, db.ForeignKey('genre.id'))
 
     espece = db.relationship('GenreModel', backref='espece')
+    espece_observation = db.relationship('ObservationModel', backref='espece_observation')

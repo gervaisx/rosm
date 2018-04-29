@@ -19,6 +19,9 @@ from models.statut_espece import StatutEspeceModel
 from models.type_eau import TypeEauModel
 from models.type_milieu import TypeMilieuModel
 from models.type_substrat import TypeSubstratModel
+from models.photo_observation import PhotoObservationModel
+from models.statut_observation import StatutObservationModel
+
 
 class UserRegister(Resource):
 
