@@ -21,7 +21,7 @@ api = Api(app)
 CORS(app)
 
 @app.route("/")
-@cross_origin(origin='*')
+@cross_origin()
 def helloWorld():
   return "Hello, cross-origin-world!"
 
