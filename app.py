@@ -15,7 +15,6 @@ from resources.type_substrat import TypeSubstrat
 from resources.categorie_profondeur import CategorieProfondeur
 from resources.statut_espece import StatutEspece
 from resources.photo_sous_espece import PhotoSousEspece
-
 from resources.regne import Regne
 from resources.embranchement import Embranchement
 from resources.classe import Classe
