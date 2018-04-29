@@ -20,6 +20,7 @@ class UserModel(db.Model):
     level_admin_id = db.Column(db.Integer, db.ForeignKey('level_admin.id'))
 
     user_picture = db.relationship('ProfilePictureModel', backref='user_picture')
+    user_observation = db.relationship('PointObservationModel', backref='user_observation')
 
     def __init__(self, username, password):
         self.username = username

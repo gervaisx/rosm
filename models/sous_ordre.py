@@ -1,8 +1,8 @@
 from db import db
 
-class OrdreModel(db.Model):
+class SousOrdreModel(db.Model):
 
-    __tablename__ = 'ordre'
+    __tablename__ = 'sous_ordre'
 
     # Basic attributes
     id = db.Column(db.Integer, primary_key=True)
@@ -12,6 +12,6 @@ class OrdreModel(db.Model):
     descript = db.Column(db.String(256))
 
     # Relations
-    sous_classe_id = db.Column(db.Integer, db.ForeignKey('sous_classe.id'))
+    ordre_id = db.Column(db.Integer, db.ForeignKey('ordre.id'))
 
-    ordre = db.relationship('SousClasseModel', backref='ordre')
+    sous_ordre = db.relationship('OrdreModel', backref='sous_ordre')

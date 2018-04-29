@@ -1,8 +1,8 @@
 from db import db
 
-class OrdreModel(db.Model):
+class EspeceModel(db.Model):
 
-    __tablename__ = 'ordre'
+    __tablename__ = 'espece'
 
     # Basic attributes
     id = db.Column(db.Integer, primary_key=True)
@@ -12,6 +12,6 @@ class OrdreModel(db.Model):
     descript = db.Column(db.String(256))
 
     # Relations
-    sous_classe_id = db.Column(db.Integer, db.ForeignKey('sous_classe.id'))
+    genre_id = db.Column(db.Integer, db.ForeignKey('genre.id'))
 
-    ordre = db.relationship('SousClasseModel', backref='ordre')
+    espece = db.relationship('GenreModel', backref='espece')
