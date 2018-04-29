@@ -21,6 +21,7 @@ from models.type_milieu import TypeMilieuModel
 from models.type_substrat import TypeSubstratModel
 from models.photo_observation import PhotoObservationModel
 from models.statut_observation import StatutObservationModel
+from models.observation import ObservationModel
 
 
 class UserRegister(Resource):
