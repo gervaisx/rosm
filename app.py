@@ -37,7 +37,7 @@ api = Api(app)
 CORS(app)
 
 @app.route("/")
-@cross_origin(origin='*', send_wildcard = True)
+@cross_origin(origin='*')
 def helloWorld():
     return "Hello, cross-origin-world!"
 
@@ -54,7 +54,6 @@ api.add_resource(TypeSubstrat, '/type-substrat')
 api.add_resource(CategorieProfondeur, '/profondeur')
 api.add_resource(StatutEspece, '/statut-espece')
 api.add_resource(PhotoSousEspece, '/photo-sous-espece')
-
 api.add_resource(Regne, '/regnes')
 api.add_resource(Embranchement, '/embranchements')
 api.add_resource(Classe, '/classes')
