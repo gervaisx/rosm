@@ -12,3 +12,7 @@ class TypeMilieuModel(db.Model):
     type_eau_id = db.Column(db.Integer, db.ForeignKey('type_eau.id'))
 
     type_milieu = db.relationship('PointObservationModel', backref='type_milieu')
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()

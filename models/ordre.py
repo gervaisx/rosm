@@ -14,4 +14,8 @@ class OrdreModel(db.Model):
     # Relations
     sous_classe_id = db.Column(db.Integer, db.ForeignKey('sous_classe.id'))
 
-    ordre = db.relationship('SousClasseModel', backref='ordre')
+    ordre = db.relationship('SousOrdreModel', backref='ordre')
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()

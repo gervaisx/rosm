@@ -14,4 +14,8 @@ class EmbranchementModel(db.Model):
     # Relations
     regne_id = db.Column(db.Integer, db.ForeignKey('regne.id'))
 
-    embranchement = db.relationship('RegneModel', backref='embranchement')
+    embranchement = db.relationship('ClasseModel', backref='embranchement')
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()

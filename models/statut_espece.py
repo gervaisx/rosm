@@ -10,3 +10,7 @@ class StatutEspeceModel(db.Model):
 
     # Relations
     statut_espece = db.relationship('SousEspeceModel', backref='statut_espece')
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()

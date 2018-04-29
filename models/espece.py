@@ -14,5 +14,9 @@ class EspeceModel(db.Model):
     # Relations
     genre_id = db.Column(db.Integer, db.ForeignKey('genre.id'))
 
-    espece = db.relationship('GenreModel', backref='espece')
+    espece = db.relationship('SousEspeceModel', backref='espece')
     espece_observation = db.relationship('ObservationModel', backref='espece_observation')
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()

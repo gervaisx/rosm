@@ -14,4 +14,8 @@ class GenreModel(db.Model):
     # Relations
     famille_id = db.Column(db.Integer, db.ForeignKey('famille.id'))
 
-    genre = db.relationship('FamilleModel', backref='genre')
+    genre = db.relationship('EspeceModel', backref='genre')
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()

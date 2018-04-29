@@ -13,3 +13,7 @@ class RegneModel(db.Model):
 
     # Relations
     regne = db.relationship('EmbranchementModel', backref='regne')
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()

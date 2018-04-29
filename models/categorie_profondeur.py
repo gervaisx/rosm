@@ -10,3 +10,7 @@ class CategorieProfondeurModel(db.Model):
 
     # Relations
     categorie_profondeur = db.relationship('PointObservationModel', backref='categorie_profondeur')
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()

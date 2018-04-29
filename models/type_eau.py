@@ -10,3 +10,7 @@ class TypeEauModel(db.Model):
 
     # Relations
     type_eau = db.relationship('TypeMilieuModel', backref='type_eau')
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()

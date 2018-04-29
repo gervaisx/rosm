@@ -10,3 +10,7 @@ class PhotoSousEspeceModel(db.Model):
 
     # Relations
     sous_espece_id = db.Column(db.Integer, db.ForeignKey('sous_espece.id'))
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()

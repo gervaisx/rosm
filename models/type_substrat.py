@@ -10,3 +10,7 @@ class TypeSubstratModel(db.Model):
 
     # Relations
     type_substrat = db.relationship('PointObservationModel', backref='type_substrat')
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()

@@ -18,3 +18,7 @@ class SousEspeceModel(db.Model):
     sous_espece = db.relationship('EspeceModel', backref='sous_espece')
     photo_sous_espece = db.relationship('PhotoSousEspeceModel', backref='photo_sous_espece')
     sous_espece_observation = db.relationship('ObservationModel', backref='sous_espece_observation')
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()
