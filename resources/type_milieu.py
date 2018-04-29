@@ -15,6 +15,10 @@ class TypeMilieu(Resource):
                         type=int,
                         required=False
                         )
+    parser.add_argument('identifier',
+                        type=int,
+                        required=False
+                        )
 
     @jwt_required()
     def get(self):
@@ -56,3 +60,20 @@ class TypeMilieu(Resource):
         except:
 
             return {'message': 'An error occurred adding the milieu.'}, 500
+
+    @jwt_required()
+    def delete(self):
+
+        data = TypeMilieu.parser.parse_args()
+
+        type_milieu = TypeMilieuModel.query.filter_by(id=data['identifier']).first()
+
+        try:
+
+            type_milieu.delete_from_db()
+
+            return {'message': 'milieu deleted'}, 200
+
+        except:
+
+            return {'message': 'An error occured deleting the milieu'}, 500

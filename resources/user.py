@@ -1,12 +1,8 @@
 from flask_restful import Resource, reqparse
 from models.user import UserModel
-from models.famille import FamilleModel
-from models.genre import GenreModel
 from models.level_admin import LevelAdminModel
-from models.ordre import OrdreModel
 from models.point_observation import PointObservationModel
 from models.profile_picture import ProfilePictureModel
-from models.sous_ordre import SousOrdreModel
 from models.photo_observation import PhotoObservationModel
 from models.statut_observation import StatutObservationModel
 from models.observation import ObservationModel
